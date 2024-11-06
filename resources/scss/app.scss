@@ -18,12 +18,27 @@
     background-clip: text;
     text-fill-color: transparent;
 }
+@mixin silver-text{
+    background: linear-gradient(90deg, #ffffff, #7a7a7a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+@mixin bronze-text{
+    background: linear-gradient(90deg, #deb884, #90754e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
 
 ::-webkit-scrollbar{
     width: 0px;
 }
 
 body{
+    background-color: #061818;
     min-height: 2000px;
     overflow-y: clip;
     // background-color: #010707;
@@ -149,21 +164,68 @@ body{
                 justify-content: center;
                 align-items: start;
 
+
                 .top-three{
+                    position: relative;
+                    top: 4rem;
                     width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: end;
+                    font-weight: 900;
+                    gap: 4px;
                     .podium{
                         max-width: 250px;
-                        max-height: 200px;
-                        padding: 1rem;
+                        padding: 0 3rem 1rem;
                         color: white;
                         border-width: 5px;
                         border-style: solid;
-                        border-image: 
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        h1{
+                            font-size: 4rem;
+                            position: absolute;
+                            margin-top: -6.5rem;
+                        }
+                        p{
+                            position: relative;
+                            // top: -2rem;
+                            text-align: center;
+                        }
+
+                        &:nth-child(1){
+                            max-height: 150px;
+                            border-image: 
                             linear-gradient(
                             to bottom, 
-                            #CBE1B6, 
-                            #60593642,
-                        ) 1 100%;
+                            #d4d4d4, 
+                            #3f3f3f02,
+                            ) 1 100%;
+                            h1{@include silver-text}
+                        }
+                        &:nth-child(2){
+                            max-height: 200px;
+                            border-image: 
+                            linear-gradient(
+                            to bottom, 
+                            #e1e5ab, 
+                            #3f3f3f02,
+                            ) 1 100%;
+                            h1{@include golden-text}
+                        }
+                        &:nth-child(3){
+                            max-height: 100px;
+                            border-image: 
+                            linear-gradient(
+                            to bottom, 
+                            #deb884, 
+                            #3f3f3f02,
+                            ) 1 100%;
+                            h1{@include bronze-text}
+                        }
                     }
                 }
             }

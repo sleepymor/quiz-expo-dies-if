@@ -1,4 +1,4 @@
-@import 'animations';
+@use 'animations';
 
 @font-face {
     font-family: enchant;
@@ -109,7 +109,7 @@ body{
 
 
     .content {
-        padding-top: 20rem;
+        padding-top: 15rem;
         width: 100%;
         background-color: #061818;
         height: auto; 
@@ -133,11 +133,39 @@ body{
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 0 6rem;
             
             h3 {
                 font-family: 'ecnhanted';
                 font-size: 4rem;
                 @include golden-text; 
+            }
+
+            div{
+                width: 100%;
+                height: 600px;
+                padding: 2rem 0;
+                display: flex;
+                justify-content: center;
+                align-items: start;
+
+                .top-three{
+                    width: 100%;
+                    .podium{
+                        max-width: 250px;
+                        max-height: 200px;
+                        padding: 1rem;
+                        color: white;
+                        border-width: 5px;
+                        border-style: solid;
+                        border-image: 
+                            linear-gradient(
+                            to bottom, 
+                            #CBE1B6, 
+                            #60593642,
+                        ) 1 100%;
+                    }
+                }
             }
         }
     }

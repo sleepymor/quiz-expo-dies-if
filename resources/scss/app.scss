@@ -175,11 +175,10 @@ body{
                     font-weight: 900;
                     gap: 4px;
                     .podium{
-                        max-width: 250px;
+                        max-width: 300px;
                         padding: 0 3rem 1rem;
                         color: white;
-                        border-width: 5px;
-                        border-style: solid;
+                        border: 5px solid transparent;
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
@@ -188,42 +187,31 @@ body{
                         h1{
                             font-size: 4rem;
                             position: absolute;
-                            margin-top: -6.5rem;
+                            margin-top: -6rem;
                         }
                         p{
                             position: relative;
-                            // top: -2rem;
+                            top: 1rem;
                             text-align: center;
+                            font-size: 1rem;
                         }
 
                         &:nth-child(1){
                             max-height: 150px;
-                            border-image: 
-                            linear-gradient(
-                            to bottom, 
-                            #d4d4d4, 
-                            #3f3f3f02,
-                            ) 1 100%;
+                            border-image: linear-gradient(to bottom, #d4d4d4, #3f3f3f02);
+                            border-image-slice: 1;
                             h1{@include silver-text}
                         }
                         &:nth-child(2){
                             max-height: 200px;
-                            border-image: 
-                            linear-gradient(
-                            to bottom, 
-                            #e1e5ab, 
-                            #3f3f3f02,
-                            ) 1 100%;
+                            border-image: linear-gradient(to bottom, #e1e5ab, #3f3f3f02);
+                            border-image-slice: 1;
                             h1{@include golden-text}
                         }
                         &:nth-child(3){
                             max-height: 100px;
-                            border-image: 
-                            linear-gradient(
-                            to bottom, 
-                            #deb884, 
-                            #3f3f3f02,
-                            ) 1 100%;
+                            border-image: linear-gradient(to bottom, #deb884, #3f3f3f02);
+                            border-image-slice: 1;
                             h1{@include bronze-text}
                         }
                     }

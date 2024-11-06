@@ -219,5 +219,46 @@ body{
             }
         }
     }
+}
+.quizz{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(6, 18, 24, 0.8);
+    backdrop-filter: blur(10px);
+    color: white;
+    z-index: 100;
+    #soalContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        p{
+            font-family: sans-serif !important;
+            font-size: 1.3rem;
+        }
+        .pilihan-ganda{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px; 
+            button{
+                font-family: sans-serif !important;
+                font-size: 1.3rem;
+                padding: 10px;
+                font-size: 16px;
+            }
+            
+        }
+
+        
+    }
     
 }

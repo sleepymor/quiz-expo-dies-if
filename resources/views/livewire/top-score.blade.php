@@ -5,19 +5,18 @@
             <section class="top-three">
                 <div class="podium">
                     <h1>2</h1>
-                    <p>Zharif Aziz</p>
+                    <p>Rafael</p>
                 </div>
                 <div class="podium">
                     <h1>1</h1>
-                    <p>Zharif Aziz</p>
+                    <p>Rafael</p>
                 </div>
                 <div class="podium">
                     <h1>3</h1>
-                    <p>Zharif Aziz Zulkarnain Widodo</p>
+                    <p><i class="ri-safari-line"></i></p>
                 </div>
             </section>
             <section class="top-ten">
-                
             </section>
         </div>
     </div>

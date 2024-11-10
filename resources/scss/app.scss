@@ -262,3 +262,73 @@ body{
     }
     
 }
+
+#registration{
+    form{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-around;
+        button {
+            position: relative;
+            overflow: hidden;
+            border: 5px solid transparent;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-image: linear-gradient(100deg, #e1e5ab, #605936);
+            border-image-slice: 1;
+            color: #e1e5ab;
+            padding: 1rem 10rem;
+            font-weight: 900;
+            transition: color 0.5s ease-out;
+            font-size: 2rem;
+            background: none; 
+        
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(100deg, #e1e5ab, #605936);
+                opacity: 0;
+                transition: opacity 0.5s ease-out;
+                z-index: -1; 
+            }
+        
+            &:hover {
+                color: white;
+            }
+        
+            &:hover::before {
+                opacity: 0.7; 
+            }
+        }
+        
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            
+            input{
+                font-family: sans-serif !important;
+                border-bottom: 5px solid;
+                border-image: linear-gradient(120deg, #e1e5ab, #605936);
+                border-image-slice: 1;
+                background: transparent;
+                font-size: 1.54rem;
+                padding: 4px 0;
+            }
+            label{
+                @include golden-text;
+                font-size: 4rem;
+                font-weight: 900;
+            }
+        }
+    }
+    
+}

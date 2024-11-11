@@ -6,15 +6,15 @@ use Livewire\Component;
 
 class Quizz extends Component
 {
-    public $name;
+    public $name; // This will hold the name received from the Registration component
 
-    protected $listeners = ['nameSubmitted'];
+    protected $listeners = ['nameSubmitted' => 'handleNameSubmitted'];
 
-    public function namaSubmitted($name)
+    public function handleNameSubmitted($data)
     {
-        $this->name = $name;
+        $this->name = $data['name']; // Store the name
+        // dd($data['name']);
     }
-
 
     public function render()
     {

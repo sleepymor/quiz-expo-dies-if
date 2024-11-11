@@ -5,8 +5,7 @@
             <input type="text" id="name" wire:model="name" required class="focus:ring-0 focus:outline-none">
         </div>
         @error('name') <span class="error">{{ $message }}</span> @enderror
-        {{ $name ? $name : "No name"}}
 
-        <button type="submit" class="">Start</button>
+        <button wire:click="submit">Start</button>
     </form>
 </div>

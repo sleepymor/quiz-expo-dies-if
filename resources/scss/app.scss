@@ -221,8 +221,9 @@ body{
     }
 }
 .quizz{
-    
+    opacity: 1;
     display: flex;
+
     flex-direction: column;
     justify-content: center;
     align-content: center;
@@ -246,9 +247,8 @@ body{
             font-size: 1.3rem;
         }
         .pilihan-ganda{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px; 
+            display: flex; 
+            
             button{
                 font-family: sans-serif !important;
                 font-size: 1.3rem;

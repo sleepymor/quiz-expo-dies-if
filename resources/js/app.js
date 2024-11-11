@@ -1,3 +1,7 @@
+const quizz = document.getElementById('quizz')
+quizz.style.display = 'none';  
+quizz.style.opacity = '0'; 
+// DEsign samph nga jelas sialan tiap kali ditekan next malah ngilang 
 import './bootstrap';
 console.log("huh")
 
@@ -7,11 +11,14 @@ console.log("huh")
 //
 
 document.addEventListener("DOMContentLoaded", function() {
-    window.startButton = function(button) {
+    
+    const startButton = document.getElementById("startButton");  // Replace with the actual button ID
+
+    startButton.addEventListener("click", function() {
         wrapperToTop().then(() => {
-            toggleQuiz(button);  // This will run only after the scroll is complete
+            toggleQuiz(startButton);
         });
-    };
+    });
     
     function wrapperToTop() {
         return new Promise((resolve) => {
@@ -47,10 +54,10 @@ document.addEventListener("DOMContentLoaded", function() {
         jumbotron.classList.toggle("opacity-0")
         jumbotron.classList.toggle("!-translate-y-96")
         
-        const quizz = document.getElementById('quizz')
-        quizz.classList.toggle("!hidden")    
+        quizz.style.display = 'flex';  
         setTimeout(() => {
-            quizz.classList.toggle("opacity-0")    
+            quizz.style.opacity = '1'; 
+            // quizz.classList.remove("opacity-0")
         }, 50);
         
         const welcome_banner = document.getElementById('welcome-banner')

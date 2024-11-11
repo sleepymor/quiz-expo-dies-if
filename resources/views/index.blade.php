@@ -16,7 +16,7 @@
             <img src="{{ asset('images/background/bottomBush.svg') }}" alt="Bottom Bush">
             <div id="jumbo-content" class="jumbo-content transition-all ease-in-out duration-300">
                 <h2>WELCOME</h2>
-                <button class="popping-btn z-20" onclick="startButton(this)">
+                <button id="startButton" class="popping-btn z-20" onclick="window.startButton(this)">
                     <img id="playButton" src="{{ asset('images/icons/playButton.png') }}" alt="Gambar play button">
                 </button>
             </div>

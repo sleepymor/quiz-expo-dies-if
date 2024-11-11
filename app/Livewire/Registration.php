@@ -6,13 +6,16 @@ use Livewire\Component;
 
 class Registration extends Component
 {
-
-    public $name;
+    public $name; // This holds the name input value
 
     public function submit()
     {
-        session()->put('name', $this->name);
-        $this->dispatch('nameSubmitted', $this->name);
+        $this->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        // Dispatch the event with the name
+        $this->dispatch('nameSubmitted', ['name' => $this->name]);
     }
 
     public function render()

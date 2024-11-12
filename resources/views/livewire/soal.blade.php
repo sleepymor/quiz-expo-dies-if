@@ -4,9 +4,6 @@
 
         $optionKeys = array_keys($firstQuestion);
     @endphp 
-    @foreach ($unAnswered as $item)
-        <p>{{ $item }}</p>
-    @endforeach
     <div class="soal">
         <p class="text-justify">{{ $firstQuestionKey }}</p>
     </div>
@@ -15,8 +12,12 @@
             @php
                 $options = $firstQuestion[$optionKeys[$i]][0];
             @endphp
-            <button>{{ $optionKeys[$i] }}. {{ $options }}</button>
+            <label class="label">
+                <input type="radio" id="value-1" checked="" name="value-radio" value="value-1"/>
+                <p class="text">{{$options}} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium labore sint iste sed voluptatum odio, qui illum ipsa cupiditate accusantium animi, amet et voluptates assumenda. Vitae nisi distinctio odio totam?</p>
+            </label>
         @endfor
+        {{-- <button>{{ $optionKeys[$i] }}. {{ $options }}</button> --}}
         {{-- <button>b. Institusi Teknologi Kalimantan</button>
         <button>c. Institut Tambang Kalimantan</button> --}}
     </div>

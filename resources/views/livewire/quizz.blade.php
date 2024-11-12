@@ -1,14 +1,14 @@
 <section id="quizz" class="quizz duration-500 justify-center items-center px-12">
-    {{-- @if ($name)
+    @if ($name)
         @livewire("soal")
     @else
         @livewire("registration")
-    @endif --}}
-    @livewire("soal")
+    @endif
+    {{-- @livewire("soal") --}}
     
-    <h1 class=" text-[10rem] text-white fixed top-0 pointer-events-none">
+    {{-- <h1 class=" text-[10rem] text-white fixed top-0 pointer-events-none">
         {{$name ? $name : "nga ada nama"}}
-    </h1>
+    </h1> --}}
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Listen for the 'nameUpdated' event triggered from Livewire

@@ -78,6 +78,21 @@ class answerseeder extends Seeder
             'answer' => '',
             'status' => '0',
             ],
+            [
+            'question_id' => '4',
+            'answer' => '',
+            'status' => '0',
+            ],
+            [
+            'question_id' => '4',
+            'answer' => '',
+            'status' => '0',
+            ],
+            [
+            'question_id' => '4',
+            'answer' => '',
+            'status' => '0',
+            ],
         );
     }
 }

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('quiz_session', function (Blueprint $table) {
+        Schema::create('quiz_sessions', function (Blueprint $table) {
             $table->id();
             $table->integer('score');
             $table->timestamps();

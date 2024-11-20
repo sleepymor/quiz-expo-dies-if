@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('player', function (Blueprint $table) {
+        Schema::create('players', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('session_id');
             $table->string('username');
             $table->string('institution');
             $table->timestamps();
 
-            $table->foreign('session_id')->references('id')->on('quiz_session');
+            $table->foreign('session_id')->references('id')->on('quiz_sessions');
         });
     }
 

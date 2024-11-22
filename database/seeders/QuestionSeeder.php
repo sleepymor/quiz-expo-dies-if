@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\question_handling\question;
+use App\Models\QuestionHandling\Question;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class questionseeder extends Seeder
+class QuestionSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -167,7 +167,7 @@ class questionseeder extends Seeder
         ];
 
         foreach ($items as $item) {
-            question::create($item);
+            Question::create($item);
         }
     }
 }

@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\QuestionHandling\UsedQuestion;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class quiz_session extends Model
+class QuizSession extends Model
 {
     use HasFactory;
 

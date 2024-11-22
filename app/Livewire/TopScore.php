@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\quiz_session;
+use App\Models\QuizSession;
 
 class TopScore extends Component
 {
@@ -12,14 +12,14 @@ class TopScore extends Component
 
     public function mount()
     {
-        $this->highscores = quiz_session::with('player')
+        $this->highscores = QuizSession::with('player')
                     ->orderby('score', 'desc')
                     ->take(3)
                     ->get();
     }
     public function render()
     {
-        
+
         // dd($highscores);
         return view('livewire.top-score', ['highscores' => $this->highscores]);
     }

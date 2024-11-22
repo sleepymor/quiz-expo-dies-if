@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\answer;
+use App\Models\QuestionHandling\Answer;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class answerseeder extends Seeder
+class AnswerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -617,7 +617,7 @@ class answerseeder extends Seeder
         ];
 
         foreach ($items as $item) {
-            answer::create($item);
+            Answer::create($item);
         }
     }
 }

@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::drop('used_question');
+        Schema::drop('used_questions');
     }
 };

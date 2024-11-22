@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::drop('quiz_session');
+        Schema::drop('quiz_sessions');
     }
 };

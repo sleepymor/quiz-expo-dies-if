@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::drop('player');
+        Schema::drop('players');
     }
 };

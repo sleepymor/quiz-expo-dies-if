@@ -7,6 +7,7 @@ use Livewire\Component;
 class Registration extends Component
 {
     public $name; // This holds the name input value
+    public $ints;
 
     public function submit()
     {

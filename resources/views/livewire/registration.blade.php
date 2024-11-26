@@ -4,6 +4,10 @@
             <label for="name">Masukkan Nama</label>
             <input type="text" id="name" wire:model="name" required class="focus:ring-0 focus:outline-none">
         </div>
+        <div>
+            <label for="ints">Institusi</label>
+            <input type="text" id="ints" wire:model="ints" required class="focus:ring-0 focus:outline-none">
+        </div>
         @error('name') <span class="error">{{ $message }}</span> @enderror
 
         <button wire:click="submit">Start</button>

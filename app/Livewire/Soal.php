@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Livewire;
+use App\Models\QuizSession;
 
 use Livewire\Component;
 

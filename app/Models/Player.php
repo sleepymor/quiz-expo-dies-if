@@ -9,7 +9,7 @@ class Player extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['username', 'quiz_sessions', 'institution'];
+    protected $fillable = ['username', 'session_id', 'institution'];
 
     public function quizSession()
     {

@@ -2,22 +2,59 @@
 
 namespace App\Livewire;
 
+use App\Models\QuizSession;
+use App\Models\QuestionHandling\Question;
+use App\Models\QuestionHandling\UsedQuestion;
+use App\Models\Player;
+use Illuminate\Http\Request;
 use Livewire\Component;
+
 
 class Registration extends Component
 {
-    public $name; // This holds the name input value
+    public $name; 
     public $ints;
 
-    public function submit()
+    protected $rules = [
+        'name' => 'required|string|max:255',
+        'ints' => 'required|string|max:255',
+    ];
+
+    public function submit(Request $request)
     {
-        $this->validate([
-            'name' => 'required|string|max:255',
+        $validatedData = $this->validate();
+
+        $this->dispatch('nameSubmitted', ['name' => $this->name]);
+
+        $session = QuizSession::create([
+            'score' => 0
         ]);
 
-        // Dispatch the event with the name
-        $this->dispatch('nameSubmitted', ['name' => $this->name]);
+        // dd($validatedData);
+
+        $latestSession = QuizSession::latest()->first();
+        $sessionId = $latestSession->id;
+
+        $player = Player::create([
+            'username' => $validatedData['name'],
+            'institution' => $validatedData['ints'], 
+            'session_id' => $session->id,
+        ]);
+
+        $questions = Question::where('level', 1)->inRandomOrder()->limit(3)->get();
+        $questions = $questions->merge(Question::where('level', 2)->inRandomOrder()->limit(3)->get());
+        $questions = $questions->merge(Question::where('level', 3)->inRandomOrder()->limit(3)->get());
+
+        dd($questions);
+
+        foreach ($questions as $question) {
+            UsedQuestion::create([
+                'session_id' => $session->id,
+                'question_id' => $question->id,
+            ]);
+        }
     }
+
 
     public function render()
     {

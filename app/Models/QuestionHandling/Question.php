@@ -13,4 +13,8 @@ class Question extends Model
     {
         return $this->hasMany(UsedQuestion::class, 'question_id');
     }
+    public function answer()
+    {
+        return $this->hasMany(Answer::class, 'question_id');
+    }
 }

@@ -45,7 +45,7 @@ class Registration extends Component
         $questions = $questions->merge(Question::where('level', 2)->inRandomOrder()->limit(3)->get());
         $questions = $questions->merge(Question::where('level', 3)->inRandomOrder()->limit(3)->get());
 
-        dd($questions);
+        // dd($questions);
 
         foreach ($questions as $question) {
             UsedQuestion::create([

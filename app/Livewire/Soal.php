@@ -2,42 +2,36 @@
 
 namespace App\Livewire;
 use App\Models\QuizSession;
+use App\Models\QuestionHandling\Question;
+use App\Models\QuestionHandling\UsedQuestion;
 
 use Livewire\Component;
 
 class Soal extends Component
 {
     public $questions = [];
-    public $unAnswered;
-    public $chosenQuestion;
-    public $firstQuestionKey;
+    // public $sessionId = QuizSession::latest()->first();
 
     public function mount(){
-        $this->questions = [
-            "Kepanjangan dari ITK apa?" => [
-                "A" => ["Institut Teknologi Kumalala", "0"],
-                "B" => ["Industri Tehnik Karanjoang", "0"],
-                "C" => ["Institut Teknologi Kalimantan", "5"],
-            ], 
-            "Siapakah nama rektor Institut Teknologi Kalimantan 2024 ?" => [
-                "A" => ["Prof. Dr. rer. nat. Agus Rubiyanto, M.Eng.Sc.", "5"],
-                "B" => ["Prof. Dr. Ir. Sulistijono, DEA", "0"],
-                "C" => ["Ir. Khakim Ghozali, M.MT.", "0"],
-            ], 
-            "Dimanakah letak kampus Institut Teknologi Kalimantan ?" => [
-                "A" => ["Jl. Soekarno-Hatta Km. 16, Karang Joang, Balikpapan, Kalimantan Timur, 76127.", "0"],
-                "B" => ["Jl. Soekarno-Hatta Km. 14, Karang Joang, Balikpapan, Kalimantan Timur, 76127", "0"],
-                "C" => ["Jl. Soekarno-Hatta Km. 15, Karang Joang, Balikpapan, Kalimantan Timur, 76127.", "5"],
-            ], 
-            "Mengapa penting untuk menjaga keamanan data pribadi pada internet ?" => [
-                "A" => ["Untuk menjaga diri", "0"],
-                "B" => ["Untuk melindungi identitas diri", "5"],
-                "C" => ["Terhindar dari hoax", "0"],
-            ], 
-        ];
-        $this->unAnswered = array_keys($this->questions);
-        $this->fetchQuestions();
+
+        $session = QuizSession::latest()->first();
+        $session_id = $session->id;
+
+        $fetchQuestions = UsedQuestion::where("session_id", $session_id)->get();
+
+
+        $question = []; 
+        
+        foreach ($fetchQuestions as $usedQuestion) {
+            $question[]  =  Question::where("id", $usedQuestion->question_id)
+                                    ->with('answer')
+                                    ->get();
+        };
+        
+        dd($question);
     }
+        
+    
 
     public function fetchQuestions(){
         $pickQuestion = rand(0, (count($this->unAnswered) - 1));

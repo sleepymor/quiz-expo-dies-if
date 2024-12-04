@@ -9,7 +9,10 @@ use Livewire\Component;
 
 class Soal extends Component
 {
-    public $questions = [];
+    public $question = [];
+    public $currentQuestion = 0;
+    public $playerScore = 0;
+    public $selectedAnswer;
     // public $sessionId = QuizSession::latest()->first();
 
     public function mount(){
@@ -23,7 +26,7 @@ class Soal extends Component
         // $this->question = []; 
 
         foreach ($fetchQuestions as $usedQuestion) {
-            $this->questions[]  =  Question::where("id", $usedQuestion->question_id)
+            $this->question[]  =  Question::where("id", $usedQuestion->question_id)
                                     ->with('answer')
                                     ->get();
         };
@@ -40,6 +43,10 @@ class Soal extends Component
     //     $this->chosenQuestion = $this->firstQuestionKey;
     // }
 
+    public function checkAnswered($points){
+        $this->currentQuestion ++;
+        $this->playerScore = $this->playerScore + ($this->selectedAnswer == 1 ? $points : 0);
+    }
     // public function checkAnswered(){
     //     $getChosenIndex = array_search($this->chosenQuestion ,$this->unAnswered);
     //     unset($this->unAnswered[$getChosenIndex]);
@@ -51,6 +58,10 @@ class Soal extends Component
     public function render()
     {
         // dd($this->questions);
-        return view('livewire.soal',["Question" => $this->questions]);
+        return view('livewire.soal',[
+            "Question" => $this->question, 
+            "currentQuestion" => $this->currentQuestion, 
+            "playerScore" => $this->playerScore,
+        ]);
     }
 }

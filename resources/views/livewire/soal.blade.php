@@ -20,30 +20,12 @@
             <button wire:click="checkAnswered('{{ $question->points }}')">Next</button>
         @endforeach        
     @else
-        <div class="soal">
-            <p class="text-justify">{{ $playerScore }}</p>
+        <div class="soal flex flex-col justify-center items-center gap-12">
+            <h1 class=" text-5xl font-extrabold">TERIMKASIH TELAH MENGERJAKAN QUIZ!</h1>
+            <div class="flex flex-col justify-center items-center gap-4">
+                <h2 class="text-2xl">Selamat mendapatkan score:</h2>
+                <p class="text-justify">{{ $playerScore }}</p>
+            </div>
         </div>
     @endif
-    
-    {{-- @endforeach --}}
-    {{-- @php
-        $firstQuestion = $questions[$firstQuestionKey];
-
-        $optionKeys = array_keys($firstQuestion);
-    @endphp 
-    <div class="soal">
-        <p class="text-justify">{{ $firstQuestionKey }}</p>
-    </div>
-    <div class="pilihan-ganda">
-        @for ($i = 0; $i < count($optionKeys); $i++)
-            @php
-                $options = $firstQuestion[$optionKeys[$i]][0];
-            @endphp
-            <label class="label">
-                <input type="radio" id="value-1" checked="" name="value-radio" value="value-1"/>
-                <p class="text">{{$options}} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium labore sint iste sed voluptatum odio, qui illum ipsa cupiditate accusantium animi, amet et voluptates assumenda. Vitae nisi distinctio odio totam?</p>
-            </label>
-        @endfor
-    </div>
-    <button wire:click="checkAnswered">Next</button> --}}
 </div>

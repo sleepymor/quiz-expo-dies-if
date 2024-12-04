@@ -12,8 +12,7 @@ class Soal extends Component
     public $question = [];
     public $currentQuestion = 0;
     public $playerScore = 0;
-    public $selectedAnswer;
-    // public $sessionId = QuizSession::latest()->first();
+    public $selectedAnswer = null;
 
     public function mount(){
 
@@ -22,38 +21,19 @@ class Soal extends Component
 
         $fetchQuestions = UsedQuestion::where("session_id", $session_id)->get();
 
-
-        // $this->question = []; 
-
         foreach ($fetchQuestions as $usedQuestion) {
             $this->question[]  =  Question::where("id", $usedQuestion->question_id)
                                     ->with('answer')
                                     ->get();
         };
-        
-        // dd($question);
     }
-        
     
-
-    // public function fetchQuestions(){
-    //     $pickQuestion = rand(0, (count($this->unAnswered) - 1));
-    //     $this->firstQuestionKey = $this->unAnswered[$pickQuestion];
-    //     // $this->firstQuestionKey = $this->unAnswered[$pickQuestion];
-    //     $this->chosenQuestion = $this->firstQuestionKey;
-    // }
-
     public function checkAnswered($points){
         $this->currentQuestion ++;
         $this->playerScore = $this->playerScore + ($this->selectedAnswer == 1 ? $points : 0);
+
+        $this->selectedAnswer = null;
     }
-    // public function checkAnswered(){
-    //     $getChosenIndex = array_search($this->chosenQuestion ,$this->unAnswered);
-    //     unset($this->unAnswered[$getChosenIndex]);
-    //     $this->unAnswered = array_values($this->unAnswered);
-    //     $this->fetchQuestions();
-    //     // dd($this->unAnswered);
-    // }
 
     public function render()
     {

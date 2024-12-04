@@ -20,36 +20,37 @@ class Soal extends Component
         $fetchQuestions = UsedQuestion::where("session_id", $session_id)->get();
 
 
-        $question = []; 
-        
+        // $this->question = []; 
+
         foreach ($fetchQuestions as $usedQuestion) {
-            $question[]  =  Question::where("id", $usedQuestion->question_id)
+            $this->questions[]  =  Question::where("id", $usedQuestion->question_id)
                                     ->with('answer')
                                     ->get();
         };
         
-        dd($question);
+        // dd($question);
     }
         
     
 
-    public function fetchQuestions(){
-        $pickQuestion = rand(0, (count($this->unAnswered) - 1));
-        $this->firstQuestionKey = $this->unAnswered[$pickQuestion];
-        // $this->firstQuestionKey = $this->unAnswered[$pickQuestion];
-        $this->chosenQuestion = $this->firstQuestionKey;
-    }
+    // public function fetchQuestions(){
+    //     $pickQuestion = rand(0, (count($this->unAnswered) - 1));
+    //     $this->firstQuestionKey = $this->unAnswered[$pickQuestion];
+    //     // $this->firstQuestionKey = $this->unAnswered[$pickQuestion];
+    //     $this->chosenQuestion = $this->firstQuestionKey;
+    // }
 
-    public function checkAnswered(){
-        $getChosenIndex = array_search($this->chosenQuestion ,$this->unAnswered);
-        unset($this->unAnswered[$getChosenIndex]);
-        $this->unAnswered = array_values($this->unAnswered);
-        $this->fetchQuestions();
-        // dd($this->unAnswered);
-    }
+    // public function checkAnswered(){
+    //     $getChosenIndex = array_search($this->chosenQuestion ,$this->unAnswered);
+    //     unset($this->unAnswered[$getChosenIndex]);
+    //     $this->unAnswered = array_values($this->unAnswered);
+    //     $this->fetchQuestions();
+    //     // dd($this->unAnswered);
+    // }
 
     public function render()
     {
-        return view('livewire.soal');
+        // dd($this->questions);
+        return view('livewire.soal',["Question" => $this->questions]);
     }
 }

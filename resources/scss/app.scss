@@ -197,13 +197,13 @@ body{
                             font-size: 1rem;
                         }
 
-                        &:nth-child(1){
+                        &:nth-child(2){
                             max-height: 150px;
                             border-image: linear-gradient(to bottom, #d4d4d4, #3f3f3f02);
                             border-image-slice: 1;
                             h1{@include silver-text}
                         }
-                        &:nth-child(2){
+                        &:nth-child(1){
                             max-height: 200px;
                             border-image: linear-gradient(to bottom, #e1e5ab, #3f3f3f02);
                             border-image-slice: 1;

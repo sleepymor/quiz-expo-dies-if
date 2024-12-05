@@ -2,7 +2,7 @@
     @php
         $questionCollection = $question[$currentQuestion] ?? "result";
     @endphp
-    @if ($questionCollection == "result")
+    @if ($questionCollection != "result")
         @foreach($questionCollection as $question)
             <div class="soal">
                 <p class="text-justify">{{ $question->question }}</p>
@@ -17,11 +17,9 @@
                             value="{{ $answer->id }}"
                             isCorrect="{{ $answer->id }}"
                         />
-                        <!-- Make sure the radio buttons for each question have a unique value -->
                         <p class="text">{{ $answer->answer }}</p>
                     </label>
                 @endforeach
-                {{-- <label class="label"><input type="radio" wire:model="selectedAnswer"/><p class="text">testting</p></label> --}}
             </div>
             <button wire:click="checkAnswered('{{ $question->points }}')">Next {{ $selectedAnswer }}</button>
         @endforeach        

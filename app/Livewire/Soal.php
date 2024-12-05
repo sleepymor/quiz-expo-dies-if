@@ -12,7 +12,7 @@ class Soal extends Component
 {
     public $question = [];
     public $currentQuestion = 0;
-    public $playerScore = 120;
+    public $playerScore = 0;
     public $selectedAnswer = null;
 
     public function mount(){

@@ -4,6 +4,7 @@ namespace App\Livewire;
 use App\Models\QuizSession;
 use App\Models\QuestionHandling\Question;
 use App\Models\QuestionHandling\UsedQuestion;
+use Illuminate\Support\Facades\DB;
 
 use Livewire\Component;
 
@@ -31,9 +32,12 @@ class Soal extends Component
     public function checkAnswered($points){
         $session = QuizSession::latest()->first();
         $this->currentQuestion ++;
-        $this->playerScore = $this->playerScore + ($this->selectedAnswer == 1 ? $points : 0);
 
-        $session->score = $session->score + ($this->selectedAnswer == 1 ? $points : 0);
+        $isCorrect = DB::table("answers")->where('id', $this->selectedAnswer)->first()->status;
+
+        $this->playerScore = $this->playerScore + ($isCorrect == 1 ? $points : 0);
+
+        $session->score = $session->score + ($isCorrect == 1 ? $points : 0);
         $session->save();
         $this->selectedAnswer = null;
     }
@@ -44,6 +48,7 @@ class Soal extends Component
             "Question" => $this->question, 
             "currentQuestion" => $this->currentQuestion, 
             "playerScore" => $this->playerScore,
+            "selectedAnswer" => $this->selectedAnswer,
         ]);
     }
 }

@@ -29,12 +29,14 @@ class Soal extends Component
     }
     
     public function checkAnswered($points){
+        $session = QuizSession::latest()->first();
         $this->currentQuestion ++;
         $this->playerScore = $this->playerScore + ($this->selectedAnswer == 1 ? $points : 0);
 
+        $session->score = $session->score + ($this->selectedAnswer == 1 ? $points : 0);
+        $session->save();
         $this->selectedAnswer = null;
     }
-
     public function render()
     {
         // dd($this->questions);

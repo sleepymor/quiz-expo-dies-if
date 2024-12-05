@@ -25,21 +25,18 @@ class Registration extends Component
         $validatedData = $this->validate();
 
         $this->dispatch('nameSubmitted', ['name' => $this->name]);
-
+    
+        // Create a new QuizSession
         $session = QuizSession::create([
             'score' => 0
         ]);
-
-        // dd($validatedData);
-
-        $latestSession = QuizSession::latest()->first();
-        $sessionId = $latestSession->id;
-
         $player = Player::create([
             'username' => $validatedData['name'],
-            'institution' => $validatedData['ints'], 
-            'session_id' => $session->id,
+            'institution' => $validatedData['ints'],
+            'session_id' => $session->id
         ]);
+    
+
 
         $questions = Question::where('level', 1)->inRandomOrder()->limit(3)->get();
         $questions = $questions->merge(Question::where('level', 2)->inRandomOrder()->limit(3)->get());

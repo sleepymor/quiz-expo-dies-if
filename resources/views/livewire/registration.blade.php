@@ -10,6 +10,6 @@
         </div>
         @error('name') <span class="error">{{ $message }}</span> @enderror
 
-        <button wire:click="submit">Start</button>
+        <button type="submit">Start</button>
     </form>
 </div>

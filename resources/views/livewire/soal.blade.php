@@ -17,11 +17,9 @@
                             value="{{ $answer->id }}"
                             isCorrect="{{ $answer->id }}"
                         />
-                        <!-- Make sure the radio buttons for each question have a unique value -->
                         <p class="text">{{ $answer->answer }}</p>
                     </label>
                 @endforeach
-                {{-- <label class="label"><input type="radio" wire:model="selectedAnswer"/><p class="text">testting</p></label> --}}
             </div>
             <button wire:click="checkAnswered('{{ $question->points }}')">Next {{ $selectedAnswer }}</button>
         @endforeach        
@@ -29,8 +27,8 @@
         <div class="soal flex flex-col justify-center items-center gap-12">
             <h1 class="text-5xl font-extrabold">TERIMKASIH TELAH MENGERJAKAN QUIZ!</h1>
             <div class="flex flex-col justify-center items-center gap-4">
-                <h2 class="text-2xl">Selamat mendapatkan score:</h2>
-                <p class="text-justify">{{ $playerScore }}</p>
+                <h2 class="!text-3xl">Selamat anda mendapatkan score</h2>
+                <p class="text-justify font-extrabold !text-9xl score-text">{{ $playerScore }}</p>
             </div>
         </div>
     @endif

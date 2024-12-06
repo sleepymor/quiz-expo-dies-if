@@ -30,16 +30,18 @@ class Soal extends Component
     }
     
     public function checkAnswered($points){
-        $session = QuizSession::latest()->first();
-        $this->currentQuestion ++;
-
-        $isCorrect = DB::table("answers")->where('id', $this->selectedAnswer)->first()->status;
-
-        $this->playerScore = $this->playerScore + ($isCorrect == 1 ? $points : 0);
-
-        $session->score = $session->score + ($isCorrect == 1 ? $points : 0);
-        $session->save();
-        $this->selectedAnswer = null;
+        if ($this->selectedAnswer != null){
+            $session = QuizSession::latest()->first();
+            $this->currentQuestion ++;
+    
+            $isCorrect = DB::table("answers")->where('id', $this->selectedAnswer)->first()->status;
+    
+            $this->playerScore = $this->playerScore + ($isCorrect == 1 ? $points : 0);
+    
+            $session->score = $session->score + ($isCorrect == 1 ? $points : 0);
+            $session->save();
+            $this->selectedAnswer = null;
+        }
     }
     public function render()
     {

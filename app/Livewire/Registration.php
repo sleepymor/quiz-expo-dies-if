@@ -57,4 +57,8 @@ class Registration extends Component
     {
         return view('livewire.registration');
     }
+
+    public function goBack() {
+        return redirect()->route('/');
+    }
 }

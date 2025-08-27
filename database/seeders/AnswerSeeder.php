@@ -14,306 +14,337 @@ class AnswerSeeder extends Seeder
     public function run(): void
     {
         $items = [
+            // 1
             [
                 "question_id" => 1,
-                "answer" => "Institut Teknologi Kalimantan",
-                "status" => true
-            ],
-            [
-                "question_id" => 1,
-                "answer" => "Institusi Teknologi Kalimantan",
+                "answer" => "Informasi Teknologi",
                 "status" => false
             ],
             [
                 "question_id" => 1,
-                "answer" => "Institut Tambang Kalimantan",
+                "answer" => "Ilmu Teknologi",
                 "status" => false
             ],
             [
                 "question_id" => 1,
-                "answer" => "Intitusi Tambang Kalimantan",
+                "answer" => "Internet Teknologi",
+                "status" => false
+            ],
+            [
+                "question_id" => 1,
+                "answer" => "Informasi dan Telekomunikasi",
+                "status" => true
+            ],
+
+            // 2
+            [
+                "question_id" => 2,
+                "answer" => "Printer",
                 "status" => false
             ],
             [
                 "question_id" => 2,
-                "answer" => "Prof. Dr. rer. nat. Agus Rubiyanto, M.Eng.Sc.",
-                "status" => true
-            ],
-            [
-                "question_id" => 2,
-                "answer" => "Prof. Dr. Ir. Sulistijono, DEA",
+                "answer" => "Keyboard",
                 "status" => false
             ],
             [
                 "question_id" => 2,
-                "answer" => "Ir. Khakim Ghozali, M.MT.",
+                "answer" => "Mouse",
                 "status" => false
             ],
             [
                 "question_id" => 2,
-                "answer" => "Prof. Erma Suryani, S.T., M.T., Ph. D.",
-                "status" => false
+                "answer" => "Monitor",
+                "status" => true
             ],
+
+            // 3
             [
                 "question_id" => 3,
-                "answer" => "Jl. Soekarno-Hatta Km. 16, Karang Joang, Balikpapan, Kalimantan Timur, 76127",
-                "status" => false
-            ],
-            [
-                "question_id" => 3,
-                "answer" => "Jl. Soekarno-Hatta Km. 14, Karang Joang, Balikpapan, Kalimantan Timur, 76127",
-                "status" => false
-            ],
-            [
-                "question_id" => 3,
-                "answer" => "Jl. Soekarno-Hatta Km. 15, Karang Joang, Balikpapan, Kalimantan Timur, 76127",
+                "answer" => "Windows",
                 "status" => true
             ],
             [
                 "question_id" => 3,
-                "answer" => "Jl. Soekarno-Hatta Km. 17, Karang Joang, Balikpapan, Kalimantan Timur, 76127",
+                "answer" => "MacOS",
+                "status" => false
+            ],
+            [
+                "question_id" => 3,
+                "answer" => "Linux",
+                "status" => false
+            ],
+            [
+                "question_id" => 3,
+                "answer" => "Android",
+                "status" => false
+            ],
+
+            // 4
+            [
+                "question_id" => 4,
+                "answer" => "Memasukkan data",
+                "status" => true
+            ],
+            [
+                "question_id" => 4,
+                "answer" => "Menyimpan file",
                 "status" => false
             ],
             [
                 "question_id" => 4,
-                "answer" => "Untuk menjaga diri",
+                "answer" => "Menampilkan gambar",
                 "status" => false
             ],
             [
                 "question_id" => 4,
-                "answer" => "Untuk melindungi identitas diri",
-                "status" => true
-            ],
-            [
-                "question_id" => 4,
-                "answer" => "Terhindar dari hoax",
+                "answer" => "Mencetak dokumen",
                 "status" => false
             ],
+
+            // 5
             [
-                "question_id" => 4,
-                "answer" => "Untuk melindungi identitas teman",
+                "question_id" => 5,
+                "answer" => "Windows Media Player",
                 "status" => false
             ],
             [
                 "question_id" => 5,
-                "answer" => "HDD , Mouse, Jaringan",
+                "answer" => "Google Chrome",
                 "status" => false
             ],
             [
                 "question_id" => 5,
-                "answer" => "CPU,RAM,Motherboard",
+                "answer" => "Microsoft Word",
                 "status" => true
             ],
             [
                 "question_id" => 5,
-                "answer" => "Data, Monitor, Speaker",
+                "answer" => "Adobe Photoshop",
                 "status" => false
             ],
+
+            // 6
             [
-                "question_id" => 5,
-                "answer" => "word,excel,power point",
+                "question_id" => 6,
+                "answer" => "Internet",
+                "status" => true
+            ],
+            [
+                "question_id" => 6,
+                "answer" => "LAN",
                 "status" => false
             ],
             [
                 "question_id" => 6,
-                "answer" => 20,
+                "answer" => "WAN",
                 "status" => false
             ],
             [
                 "question_id" => 6,
-                "answer" => 23,
+                "answer" => "MAN",
                 "status" => false
             ],
-            [
-                "question_id" => 6,
-                "answer" => 21,
-                "status" => false
-            ],
-            [
-                "question_id" => 6,
-                "answer" => 22,
-                "status" => true
-            ],
+
+            // 7
             [
                 "question_id" => 7,
-                "answer" => "JTSP",
+                "answer" => "Menampilkan video",
                 "status" => false
             ],
             [
                 "question_id" => 7,
-                "answer" => "JTIP",
+                "answer" => "Mengetik teks",
                 "status" => false
             ],
             [
                 "question_id" => 7,
-                "answer" => "JIKL",
-                "status" => false
+                "answer" => "Menggerakkan kursor",
+                "status" => true
             ],
             [
                 "question_id" => 7,
-                "answer" => "JMTI",
-                "status" => true
+                "answer" => "Menyimpan data",
+                "status" => false
             ],
+
+            // 8
             [
                 "question_id" => 8,
-                "answer" => "Sebagai otak",
-                "status" => true
-            ],
-            [
-                "question_id" => 8,
-                "answer" => "Penyimpanan",
+                "answer" => "Windows Explorer",
                 "status" => false
             ],
             [
                 "question_id" => 8,
-                "answer" => "Grafik",
+                "answer" => "Adobe Reader",
                 "status" => false
             ],
             [
                 "question_id" => 8,
-                "answer" => "Gambar",
+                "answer" => "Google Chrome",
+                "status" => true
+            ],
+            [
+                "question_id" => 8,
+                "answer" => "Microsoft Excel",
+                "status" => false
+            ],
+
+            // 9
+            [
+                "question_id" => 9,
+                "answer" => "Program komputer",
                 "status" => false
             ],
             [
                 "question_id" => 9,
-                "answer" => "Asian Indoor Games 2007",
-                "status" => true
-            ],
-            [
-                "question_id" => 9,
-                "answer" => "Asian Indoor Games 2018",
+                "answer" => "Jaringan internet",
                 "status" => false
             ],
             [
                 "question_id" => 9,
-                "answer" => "Asian Indoor Games 2012",
+                "answer" => "Data digital",
                 "status" => false
             ],
             [
                 "question_id" => 9,
-                "answer" => "Asian Indoor Games 2016",
+                "answer" => "Perangkat keras",
+                "status" => true
+            ],
+
+            // 10
+            [
+                "question_id" => 10,
+                "answer" => "Layar monitor",
                 "status" => false
             ],
             [
                 "question_id" => 10,
-                "answer" => "Alife",
+                "answer" => "Kabel jaringan",
                 "status" => false
             ],
             [
                 "question_id" => 10,
-                "answer" => "Alive",
-                "status" => true
-            ],
-            [
-                "question_id" => 10,
-                "answer" => "a live",
+                "answer" => "Perangkat keras",
                 "status" => false
             ],
             [
                 "question_id" => 10,
-                "answer" => "life",
+                "answer" => "Program komputer",
+                "status" => true
+            ],
+
+            // 11
+            [
+                "question_id" => 11,
+                "answer" => "Monitor",
                 "status" => false
             ],
             [
                 "question_id" => 11,
-                "answer" => "11 tahun",
-                "status" => false
-            ],
-            [
-                "question_id" => 11,
-                "answer" => "7 tahun",
+                "answer" => "Flashdisk",
                 "status" => true
             ],
             [
                 "question_id" => 11,
-                "answer" => "9 tahun",
+                "answer" => "Mouse",
                 "status" => false
             ],
             [
                 "question_id" => 11,
-                "answer" => "6 tahun",
+                "answer" => "Printer",
                 "status" => false
             ],
+
+            // 12
             [
                 "question_id" => 12,
-                "answer" => "Prof. Erma Suryani S.T., M.T., Ph.D.",
+                "answer" => "MacOS",
                 "status" => true
             ],
             [
                 "question_id" => 12,
-                "answer" => "Ir. Khakim Ghozali, M.MT.",
+                "answer" => "Ubuntu",
                 "status" => false
             ],
             [
                 "question_id" => 12,
-                "answer" => "Yuspian, S.Sos., M.I.R.",
+                "answer" => "Windows",
                 "status" => false
             ],
             [
                 "question_id" => 12,
-                "answer" => "Prof. Dr. Ir. Sulistijono, DEA",
+                "answer" => "Linux",
+                "status" => false
+            ],
+
+            // 13
+            [
+                "question_id" => 13,
+                "answer" => "Mengedit video",
                 "status" => false
             ],
             [
                 "question_id" => 13,
-                "answer" => "HTML",
+                "answer" => "Memasukkan data",
+                "status" => false
+            ],
+            [
+                "question_id" => 13,
+                "answer" => "Mencetak dokumen",
                 "status" => true
             ],
             [
                 "question_id" => 13,
-                "answer" => "Python",
+                "answer" => "Menampilkan gambar",
                 "status" => false
             ],
-            [
-                "question_id" => 13,
-                "answer" => "Javascript",
-                "status" => false
-            ],
-            [
-                "question_id" => 13,
-                "answer" => "C++",
-                "status" => false
-            ],
+
+            // 14
             [
                 "question_id" => 14,
-                "answer" => "Memblokir ads",
-                "status" => false
-            ],
-            [
-                "question_id" => 14,
-                "answer" => "Menggunakan Antivirus",
+                "answer" => "Unit pemrosesan pusat",
                 "status" => true
             ],
             [
                 "question_id" => 14,
-                "answer" => "Menggunakan vpn",
+                "answer" => "Perangkat penyimpanan",
                 "status" => false
             ],
             [
                 "question_id" => 14,
-                "answer" => "Menjalankan pemindaian rutin pada komputer",
+                "answer" => "Perangkat input",
+                "status" => false
+            ],
+            [
+                "question_id" => 14,
+                "answer" => "Layar komputer",
+                "status" => false
+            ],
+
+            // 15
+            [
+                "question_id" => 15,
+                "answer" => "Microsoft Excel",
                 "status" => false
             ],
             [
                 "question_id" => 15,
-                "answer" => "sebuah perangkat untuk bermain game",
+                "answer" => "Google Chrome",
+                "status" => false
+            ],
+            [
+                "question_id" => 15,
+                "answer" => "Microsoft Word",
+                "status" => false
+            ],
+            [
+                "question_id" => 15,
+                "answer" => "Microsoft PowerPoint",
                 "status" => true
             ],
-            [
-                "question_id" => 15,
-                "answer" => "antarmuka yang paling sederhana untuk berinteraksi dengan komputer.",
-                "status" => false
-            ],
-            [
-                "question_id" => 15,
-                "answer" => "sebuah permainan elektronik",
-                "status" => false
-            ],
-            [
-                "question_id" => 15,
-                "answer" => "Sebuah alat untuk mengetik perintah pada komputer",
-                "status" => false
-            ],
+#
+
             [
                 "question_id" => 16,
                 "answer" => "Sebagai penyimpanan",

@@ -15,75 +15,81 @@ class QuestionSeeder extends Seeder
     {
         $items = [
             [
-                'question' => 'Apa kepanjangan dari ITK  ?',
+                'question' => 'Apa kepanjangan dari "IT" dalam dunia teknologi ?',
                 'level' => '1',
                 'points' => '5',
             ],
             [
-                'question' => 'Siapakah nama rektor Institut Teknologi Kalimantan 2024 ?',
+                'question' => 'Perangkat keras komputer yang digunakan untuk menampilkan gambar disebut ?',
                 'level' => '1',
                 'points' => '5',
             ],
             [
-                'question' => 'Dimanakah letak kampus Institut Teknologi Kalimantan ?',
+                'question' => 'Sistem operasi yang paling umum digunakan di komputer pribadi adalah ?',
                 'level' => '1',
                 'points' => '5',
             ],
             [
-                'question' => 'Mengapa penting untuk menjaga keamanan data pribadi pada internet ?',
+                'question' => 'Apa fungsi utama dari keyboard ?',
                 'level' => '1',
                 'points' => '5',
             ],
             [
-                'question' => 'Manakah dibawah ini yang merupakan komponen computer ?',
+                'question' => 'Perangkat lunak yang digunakan untuk mengetik dokumen adalah ?',
                 'level' => '1',
                 'points' => '5',
             ],
             [
-                'question' => 'Ada berapa prodi yang terdapat di kampus Institut Teknologi Kalimantan?',
+                'question' => 'Apa nama jaringan komputer terbesar di dunia ?',
                 'level' => '1',
                 'points' => '5',
             ],
             [
-                'question' => 'Prodi Informatika dinaungi oleh jurusan',
+                'question' => 'Apa fungsi dari mouse pada komputer ?',
                 'level' => '1',
                 'points' => '5',
             ],
             [
-                'question' => 'Apa fungsi dari CPU?',
+                'question' => 'Apa nama program yang digunakan untuk menjelajahi internet',
                 'level' => '1',
                 'points' => '5',
             ],
             [
-                'question' => 'Kapan cabang olahraga esport pertama kali diadakan?',
+                'question' => 'Apa itu "hardware" dalam komputer ?',
                 'level' => '1',
                 'points' => '5',
             ],
             [
-                'question' => 'Apa tema yang diusung pada dies natalis ke 10 ini?',
+                'question' => 'Apa itu "software" dalam komputer ?',
                 'level' => '1',
                 'points' => '5',
             ],
             [
-                'question' => 'Sudah berapa lama Kampus ITK bediri ?',
+                'question' => 'Perangkat penyimpanan data yang umum digunakan adalah ?',
+                'level' => '1',
+                'points' => '5',
+            ],
+            [
+                'question' => 'Apa nama sistem operasi yang dikembangkan oleh Apple ?',
                 'level' => '2',
                 'points' => '10',
             ],
             [
-                'question' => 'Siapakah nama wakil rektor bidang akademik ITK tahun 2024 ?',
+                'question' => 'Apa fungsi dari printer ?',
                 'level' => '2',
                 'points' => '10',
             ],
             [
-                'question' => 'Bahasa permograman yang populer digunakan dalam pembuatan website ?',
+                'question' => 'Apa itu "CPU" dalam komputer ?',
                 'level' => '2',
                 'points' => '10',
             ],
             [
-                'question' => 'Bagaimana cara menjaga keamanan computer dari virus dan malware ?',
+                'question' => 'Apa nama aplikasi yang digunakan untuk membuat presentasi ?',
                 'level' => '2',
                 'points' => '10',
             ],
+            # 15 soal baru ^
             [
                 'question' => 'Apakah itu konsol ?',
                 'level' => '2',

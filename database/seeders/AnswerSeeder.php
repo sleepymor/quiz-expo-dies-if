@@ -18,7 +18,7 @@ class AnswerSeeder extends Seeder
             [
                 "question_id" => 1,
                 "answer" => "Informasi Teknologi",
-                "status" => false
+                "status" => true
             ],
             [
                 "question_id" => 1,
@@ -33,7 +33,7 @@ class AnswerSeeder extends Seeder
             [
                 "question_id" => 1,
                 "answer" => "Informasi dan Telekomunikasi",
-                "status" => true
+                "status" => false
             ],
 
             // 2

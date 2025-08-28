@@ -8,6 +8,7 @@
     <title></title>
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/motion.js'])
 </head>
+<body class="font-sans antialiased">
 
 <body class="font-sans antialiased flex justify-center items-center h-screen">
     <div id="intro-overlay" class="fixed inset-0 z-[999] bg-black flex justify-center items-center">

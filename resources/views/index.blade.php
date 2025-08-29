@@ -1,40 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/motion.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/scss/app.scss'])
 </head>
 <body class="font-sans antialiased">
-
-<body class="font-sans antialiased flex justify-center items-center h-screen">
-    <div id="intro-overlay" class="fixed inset-0 z-[999] bg-black flex justify-center items-center">
-        <h2 id="intro-text" class="text-white text-5xl md:text-7xl lg:text-8xl xl:text-8xl">WELCOME</h2>
-    </div>
-
     <div id="wrapper" class="parallax-wrapper">
-        <header id="welcome-banner"
-            class="welcome transition-all ease-in-out duration-500 flex justify-center items-center h-[200vh]">
-            <div id="jumbo-content"
-                class="jumbo-content transition-all ease-in-out duration-300 flex flex-col items-center pt-[280px] md:pt-[260px] lg:pt-[410px] xl:pt-[350px]">
-                <h2 class="text-center text-7xl md:text-9xl lg:text-9xl xl:text-9xl mb-12 md:mb-15 lg:mb-6 xl:mb-20">
-                    <span class="animated-word">W</span><span class="animated-word">E</span><span
-                        class="animated-word">L</span><span class="animated-word">C</span><span
-                        class="animated-word">O</span><span class="animated-word">M</span><span
-                        class="animated-word">E</span>
-                </h2>
-                <button id="startButton" class="popping-btn z-20 mb:mt-20 xl: mt-5" onclick="window.startButton(this)">
-                    <img id="playButton" src="{{ asset('images/icons/playButton.png') }}" alt="Gambar play button"
-                        class="mt-20 w-[230px] h-[230px] md:w-[300px] md:h-[300px] lg:w-[200px] lg:h-[200px] xl:w-[250px] xl:h-[250px]">
+        <header id="welcome-banner" class="welcome transition-all ease-in-out duration-500 ">
+            <img src="{{ asset('images/2025/background.png') }}" alt="Background" height="auto" >
+                
+            <div style="position: relative; width: 100%; margin-top: -15%;">
+
+                <!-- Cyber city kiri -->
+                <img src="{{ asset('images/2025/cyber city kiri.png') }}" 
+                    alt="Cyber Kiri" 
+                    style="position: absolute; left: 0; top: 58%; transform: translateY(-50%); width: 22%; height: auto; z-index: 1;">
+
+                <!-- Cyber city kanan -->
+                <img src="{{ asset('images/2025/cyber city kanan.png') }}" 
+                    alt="Cyber Kanan" 
+                    style="position: absolute; right: 0; top: 58%; transform: translateY(-50%); width: 22%; height: auto; z-index: 1;">
+
+                <!-- Foreground di atas city -->
+                <img src="{{ asset('images/2025/Foreground.png') }}" 
+                    alt="Foreground" 
+                    style="position: absolute; bottom: -50%; left: 50%; transform: translateX(-50%); width: 100%; height: auto; z-index: 2;">
+
+                <!-- Figur cewek & cowok (lebih turun) -->
+                <div style="display: flex; justify-content: center; align-items: center; gap: 200px; position: relative; z-index: 3; top: 6rem;">
+                    <img src="{{ asset('images/2025/figur cewek.png') }}" alt="Cewek" style="width: 22%; height: auto;">
+                    <img src="{{ asset('images/2025/figur cowok.png') }}" alt="Cowok" style="width: 22%; height: auto;">
+                </div>
+
+                <!-- Tombol Play (tetap center) -->
+                <button id="startButton" class="popping-btn" onclick="window.startButton(this)" 
+                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 4; background: none; border: none; cursor: pointer;">
+                    <img id="playButton" src="{{ asset('images/2025/Play.png') }}" alt="Play Button" style="width: 160px; height: auto;">
                 </button>
+            </div>
+
+            <div id="jumbo-content" class="jumbo-content transition-all ease-in-out duration-300">
+                <img src="{{ asset('images/2025/Welcome.png') }}" alt="Welcome" width="60%" style="padding-top: 7%">
             </div>
         </header>
         @livewire('top-score')
         @livewire('quizz')
     </div>
 </body>
-
 </html>

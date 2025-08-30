@@ -19,7 +19,7 @@
             </div>
             <div class="flex justify-center mt-6">
                 <button wire:click="checkAnswered('{{ $question->points }}')"
-                    class="bg-white text-black py-4 px-4 w-full rounded font-bold uppercase text-4xl">
+                    class="w-full max-w-xl mx-auto block bg-white text-blue-900 font-extrabold text-5xl uppercase py-4 px-8 rounded-lg border-4 border-white hover:bg-blue-50 hover:border-blue-200 transition-all duration-200 tracking-wider shadow-lg">
                     Next {{ $selectedAnswer }}
                 </button>
             </div>

@@ -1,4 +1,14 @@
 <div id="soalContainer" class="transition-all duration-200 ease-in">
+    <!-- decorations -->
+    <div class="fixed inset-0 pointer-events-none z-30">
+        <!-- top left decoration -->
+        <img src="{{ asset('images/2025/decorations/2-top-left.svg') }}" alt="Top Left Decoration"
+            class="absolute -top-32 -left-32 w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-70 scale-110">
+
+        <!-- bottom right decoration -->
+        <img src="{{ asset('images/2025/decorations/2-bottom-right.svg') }}" alt="Bottom Right Decoration"
+            class="absolute -bottom-40 -right-40 w-[500px] h-[500px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] opacity-50 scale-125">
+    </div>
     @php
         $questionCollection = $question[$currentQuestion] ?? 'result';
     @endphp
@@ -9,7 +19,8 @@
             </div>
             <div class="pilihan-ganda flex flex-col gap-4 mt-6">
                 @foreach ($question->answer as $answer)
-                    <label class="label flex items-center gap-4 cursor-pointer py-3 px-4 rounded-lg transition text-2xl">
+                    <label
+                        class="label flex items-center gap-4 cursor-pointer py-3 px-4 rounded-lg transition text-2xl">
                         <input type="radio" wire:model="selectedAnswer" name="value-radio-{{ $question->id }}"
                             value="{{ $answer->id }}"
                             class="appearance-none border-2 border-blue-400 bg-white h-6 w-6 rounded-md checked:bg-blue-600 checked:border-blue-600 transition duration-150 flex-shrink-0 shadow" />

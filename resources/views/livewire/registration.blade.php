@@ -12,18 +12,18 @@
 
     <!-- decorations -->
     <div class="fixed inset-0 pointer-events-none z-10">
-        <!-- top left decoration - dibuat lebih besar dan terpotong natural -->
+        <!-- top left decoration -->
         <img src="{{ asset('images/2025/decorations/top-left.svg') }}" alt="Top Left Decoration"
             class="absolute -top-32 -left-32 w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-70 scale-110">
 
-        <!-- bottom right decoration - dibuat lebih besar dan terpotong natural -->
+        <!-- bottom right decoration -->
         <img src="{{ asset('images/2025/decorations/bottom-right-blur.svg') }}" alt="Bottom Right Decoration"
             class="absolute -bottom-40 -right-40 w-[500px] h-[500px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] opacity-50 scale-125">
     </div>
 
     <!-- back button -->
     <button type="button"
-        class="absolute top-8 left-8 text-white hover:text-gray-300 transition-colors duration-200 z-30"
+        class="fixed top-8 left-8 text-white hover:text-gray-300 transition-colors duration-200 z-30"
         wire:click="goBack">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
             <path
@@ -65,7 +65,7 @@
                 <!-- stsrt button -->
                 <div class="pt-8">
                     <button type="submit"
-                        class="w-full max-w-xl mx-auto block bg-white text-blue-900 font-extrabold text-5xl uppercase py-4 px-8 rounded-lg border-4 border-white hover:bg-blue-50 hover:border-blue-200 transition-all duration-200 tracking-wider shadow-lg">
+                        class="w-full max-w-xl mx-auto block bg-blue-900 bg-opacity-20 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-opacity-30 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 transition-all duration-200 active:scale-95 font-extrabold text-5xl uppercase py-4 px-8 rounded-lg border-4  border-white border-opacity-40 hover:bg-blue-50 hover:border-blue-200 tracking-wider">
                         Start
                     </button>
                 </div>

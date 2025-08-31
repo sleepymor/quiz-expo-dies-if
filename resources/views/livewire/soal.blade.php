@@ -19,18 +19,18 @@
             </div>
             <div class="flex justify-center mt-6">
                 <button wire:click="checkAnswered('{{ $question->points }}')"
-                    class="w-full max-w-xl mx-auto block bg-white text-blue-900 font-extrabold text-5xl uppercase py-4 px-8 rounded-lg border-4 border-white hover:bg-blue-50 hover:border-blue-200 transition-all duration-200 tracking-wider shadow-lg">
+                    class="w-96 bg-blue-900 bg-opacity-20 shadow-[0px_4px_4px_rgba(0,0,0,0.25)] hover:bg-opacity-30 focus:outline-none focus:ring-4 focus:ring-blue-300 focus:ring-opacity-50 transition-all duration-200 active:scale-95 font-extrabold text-5xl uppercase py-4 px-8 rounded-lg border-4  border-white border-opacity-40 hover:bg-blue-50 hover:border-blue-200 tracking-wider">
                     Next {{ $selectedAnswer }}
                 </button>
             </div>
-    @endforeach
-@else
-    <div class="soal flex flex-col justify-center items-center gap-12">
-        <h1 class="text-5xl font-extrabold">TERIMKASIH TELAH MENGERJAKAN QUIZ!</h1>
-        <div class="flex flex-col justify-center items-center gap-4">
-            <h2 class="!text-3xl">Selamat anda mendapatkan score</h2>
-            <p class="text-justify font-extrabold !text-9xl score-text">{{ $playerScore }}</p>
+        @endforeach
+    @else
+        <div class="soal flex flex-col justify-center items-center gap-12">
+            <h1 class="text-5xl font-extrabold">TERIMKASIH TELAH MENGERJAKAN QUIZ!</h1>
+            <div class="flex flex-col justify-center items-center gap-4">
+                <h2 class="!text-3xl">Selamat anda mendapatkan score</h2>
+                <p class="text-justify font-extrabold !text-9xl score-text">{{ $playerScore }}</p>
+            </div>
         </div>
-    </div>
     @endif
 </div>

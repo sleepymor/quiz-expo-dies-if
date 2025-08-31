@@ -10,9 +10,9 @@
 <body class="font-sans antialiased">
     <div id="wrapper" class="parallax-wrapper">
         <header id="welcome-banner" class="welcome transition-all ease-in-out duration-500 ">
-            <img src="{{ asset('images/2025/background.png') }}" alt="Background" height="auto" >
+            <img src="{{ asset('images/2025/background main.png') }}" alt="Background" height="auto" >
                 
-            <div style="position: relative; width: 100%; margin-top: -15%;">
+            <div style="position: relative; width: 100%; margin-top: -13%;">
 
                 <!-- Cyber city kiri -->
                 <img src="{{ asset('images/2025/cyber city kiri.png') }}" 

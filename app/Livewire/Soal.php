@@ -14,6 +14,8 @@ class Soal extends Component
     public $currentQuestion = 0;
     public $playerScore = 0;
     public $selectedAnswer = null;
+    public $showPopup = false;
+    public $popupStatus = null;
 
     public function mount(){
 
@@ -28,17 +30,36 @@ class Soal extends Component
                                     ->get();
         };
     }
+
+    public function nextQuestion()
+    {
+        $this->currentQuestion++;
+        $this->selectedAnswer = null;
+    }
     
     public function checkAnswered($points){
+        $current = $this->question[$this->currentQuestion][0];
+        $selected = $this->selectedAnswer;
+
+        // cati jawaban yang dipilih dari relasi answer
+        $selectedAnswerObj = $current->answer->where('id', $selected)->first();
+
+        $isCorrect = $selectedAnswerObj ? ($selectedAnswerObj->is_correct ?? $selectedAnswerObj->status ?? false) : false;
+
+        $this->popupStatus = $isCorrect ? 'benar' : 'salah';
+        $this->showPopup = true;
+
+        // next ke soal berikutnya setelah delay
+        $this->dispatch('showPopup');
+
         if ($this->selectedAnswer != null){
             $session = QuizSession::latest()->first();
             $this->currentQuestion ++;
-    
-            $isCorrect = DB::table("answers")->where('id', $this->selectedAnswer)->first()->status;
-    
-            $this->playerScore = $this->playerScore + ($isCorrect == 1 ? $points : 0);
-    
-            $session->score = $session->score + ($isCorrect == 1 ? $points : 0);
+
+            // pake hasil $isCorrect di atas
+            $this->playerScore = $this->playerScore + ($isCorrect ? $points : 0);
+
+            $session->score = $session->score + ($isCorrect ? $points : 0);
             $session->save();
             $this->selectedAnswer = null;
         }

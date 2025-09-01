@@ -30,3 +30,31 @@ input[type="text"]::-webkit-credentials-auto-fill-button {
     width: 0;
     margin: 0;
 }
+
+#soalContainer {
+    transition: all 0.3s ease-in-out;
+}
+
+.soal {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.pilihan-ganda {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mac-window {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+}

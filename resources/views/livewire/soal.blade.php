@@ -1,4 +1,37 @@
 <div id="soalContainer" class="transition-all duration-200 ease-in">
+    @if ($showPopup)
+        <div x-data="{ open: true }" x-show="open" x-init="setTimeout(() => {
+            open = false;
+            $wire.set('showPopup', false);
+        }, 1200)"
+            class="fixed inset-0 z-50 flex items-center justify-center bg-black/40" style="backdrop-filter: blur(2px);"
+            x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+
+            <div class="rounded-2xl shadow-2xl flex flex-col w-[400px] h-[250px] {{ $popupStatus == 'benar' ? 'bg-green-500' : 'bg-red-600' }} relative overflow-hidden"
+                x-transition:enter="transition ease-out duration-300 transform"
+                x-transition:enter-start="opacity-0 scale-75 translate-y-4"
+                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+                x-transition:leave="transition ease-in duration-200 transform"
+                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+                x-transition:leave-end="opacity-0 scale-75 translate-y-4">
+
+                <div class="flex items-center gap-3 p-4 pb-2">
+                    <div class="w-3 h-3 rounded-full bg-red-400 border border-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-400 border border-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-400 border border-green-500"></div>
+                </div>
+
+                <!-- content area -->
+                <div class="flex-1 flex items-center justify-center">
+                    <span class="text-5xl font-extrabold text-white drop-shadow-lg">
+                        {{ strtoupper($popupStatus) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    @endif
     <!-- decorations -->
     <div class="fixed inset-0 pointer-events-none z-30">
         <!-- top left decoration -->

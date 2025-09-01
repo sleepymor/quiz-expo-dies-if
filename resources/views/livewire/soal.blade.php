@@ -106,7 +106,7 @@
 
                 <div
                     class="mt-10 flex justify-center items-center flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <button
+                    <button wire:click="retakeQuiz"
                         class="relative backdrop-blur text-white font-bold text-xl sm:text-2xl md:text-4xl py-3 px-6 sm:py-4 sm:px-8 md:px-12 rounded-2xl transition-all duration-300 shadow-lg border-2 border-blue-300 hover:shadow-2xl hover:scale-105 hover:border-blue-200 hover:bg-white/10 group">
                         <span class="relative z-10 transition-all duration-300">Coba Lagi</span>
                         <div
@@ -117,6 +117,7 @@
                         </div>
                     </button>
                     <button
+                        wire:click="backToHome"
                         class="relative backdrop-blur text-white font-bold text-xl sm:text-2xl md:text-4xl py-3 px-6 sm:py-4 sm:px-8 md:px-12 rounded-2xl transition-all duration-300 shadow-lg border-2 border-blue-300 hover:shadow-2xl hover:scale-105 hover:border-blue-200 hover:bg-white/10 group">
                         <span class="relative z-10 transition-all duration-300">Kembali</span>
                         <div

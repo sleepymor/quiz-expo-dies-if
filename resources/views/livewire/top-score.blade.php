@@ -3,12 +3,12 @@
     <div class="score w-full max-w-3xl md:max-w-4xl lg:max-w-3xl xl:max-w-4xl mx-auto px-4 font-sans antialiased">
         <h3 class="animated-pop text-center text-6xl md:text-8xl lg:text-8xl xl:text-8xl font-bold mb-20 lg:mb-20 xl:mb-20">Top Three</h3>       
        
-<div class="top-three flex justify-center items-end mb-8 sm:mb-10 lg:mb-8 gap-4" style="z-index: 10">
+<div class="top-three flex justify-center items-end mb-8 sm:mb-10 lg:mb-8 gap-4" style="z-index: 10" >
 
     <img src="{{ asset('images/2025/Figur Cewek.png') }}" alt="figur cewek" class="h-auto max-h-[350px]">
 
     {{-- Podium 2 --}}
-    <div class="podium flex flex-col items-center flex-1 min-w-[100px] sm:min-w-[120px] md:min-w-[140px] ">
+    <div class="podium flex flex-col items-center flex-1 min-w-[100px] sm:min-w-[120px] md:min-w-[140px]" style="padding-top: 20%; padding-bottom:30%">
         <div class="flex items-center justify-center w-full h-[200px] font-bold text-4xl sm:text-5xl md:text-6xl"
              style="background-color: #9EFF00; color: #160093;">
             2
@@ -19,7 +19,7 @@
     </div>
 
     {{-- Podium 1 --}}
-    <div class="podium flex flex-col items-center flex-1 min-w-[100px] sm:min-w-[120px] md:min-w-[140px]">
+    <div class="podium flex flex-col items-center flex-1 min-w-[100px] sm:min-w-[120px] md:min-w-[140px]" style="padding-top: 10%; padding-bottom: 30%;">
         <div class="flex items-center justify-center w-full h-[240px] font-bold text-5xl sm:text-6xl md:text-7xl"
              style="background-color: #009DFF; color: white;">
             1
@@ -30,7 +30,7 @@
     </div>
 
     {{-- Podium 3 --}}
-    <div class="podium flex flex-col items-center flex-1 min-w-[100px] sm:min-w-[120px] md:min-w-[140px]">
+    <div class="podium flex flex-col items-center flex-1 min-w-[100px] sm:min-w-[120px] md:min-w-[140px]" style="padding-top:30%; padding-bottom: 30%;">
         <div class="flex items-center justify-center w-full h-[160px] font-bold text-3xl sm:text-4xl md:text-5xl"
              style="background-color: #160093; color:#9EFF00;">
             3
@@ -46,11 +46,6 @@
 
 
 
-        <div class="flex justify-center mb-5">
-            <button class="bg-gray-300 text-white text-sm sm:text-xl md:text-2xl lg:text-lg font-bold py-2 px-6 sm:py-4 sm:px-10 md:py-4 md:px-12 lg:py-2 lg:px-8 rounded-full hover:bg-gray-200 transition-colors duration-200">
-                Leaderboard
-            </button>
-        </div>
         
 
         

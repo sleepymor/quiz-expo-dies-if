@@ -56,7 +56,8 @@
                         class="label flex items-center gap-4 cursor-pointer py-3 px-4 rounded-lg transition text-2xl">
                         <input type="radio" wire:model="selectedAnswer" name="value-radio-{{ $question->id }}"
                             value="{{ $answer->id }}"
-                            class="appearance-none border-2 border-blue-400 bg-white h-6 w-6 rounded-md checked:bg-blue-600 checked:border-blue-600 transition duration-150 flex-shrink-0 shadow" />
+                            class="appearance-none border-2 border-blue-400 bg-white h-6 w-6 rounded-md checked:bg-blue-600 checked:border-blue-600 transition duration-150 flex-shrink-0 shadow"
+                            required />
                         <span class="text-lg font-medium">{{ $answer->answer }}</span>
                     </label>
                 @endforeach
@@ -116,8 +117,7 @@
                             class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-r from-blue-400/20 via-purple-400/20 to-pink-400/20 rounded-2xl transition-all duration-300">
                         </div>
                     </button>
-                    <button
-                        wire:click="backToHome"
+                    <button wire:click="backToHome"
                         class="relative backdrop-blur text-white font-bold text-xl sm:text-2xl md:text-4xl py-3 px-6 sm:py-4 sm:px-8 md:px-12 rounded-2xl transition-all duration-300 shadow-lg border-2 border-blue-300 hover:shadow-2xl hover:scale-105 hover:border-blue-200 hover:bg-white/10 group">
                         <span class="relative z-10 transition-all duration-300">Kembali</span>
                         <div

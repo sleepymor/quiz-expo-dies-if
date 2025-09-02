@@ -4,33 +4,92 @@
             open = false;
             $wire.set('showPopup', false);
         }, 1200)"
-            class="fixed inset-0 z-50 flex items-center justify-center bg-black/40" style="backdrop-filter: blur(2px);"
+            class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-[6px]"
             x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
             x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
             x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
 
-            <div class="rounded-2xl shadow-2xl flex flex-col w-[400px] h-[250px] {{ $popupStatus == 'benar' ? 'bg-green-500' : 'bg-red-600' }} relative overflow-hidden"
-                x-transition:enter="transition ease-out duration-300 transform"
-                x-transition:enter-start="opacity-0 scale-75 translate-y-4"
-                x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-                x-transition:leave="transition ease-in duration-200 transform"
-                x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-                x-transition:leave-end="opacity-0 scale-75 translate-y-4">
+            <div class="relative w-[420px] h-[260px] rounded-3xl shadow-2xl border-2 border-blue-400/60 overflow-hidden
+            {{ $popupStatus == 'benar'
+                ? 'bg-gradient-to-br from-blue-700 via-blue-900 to-blue-800'
+                : 'bg-gradient-to-br from-red-700 via-red-900 to-red-800' }}
+            animate-pulse"
+                x-transition:enter="transition ease-out duration-400 transform"
+                x-transition:enter-start="opacity-0 scale-50 rotate-6"
+                x-transition:enter-end="opacity-100 scale-100 rotate-0"
+                x-transition:leave="transition ease-in duration-300 transform"
+                x-transition:leave-start="opacity-100 scale-100 rotate-0"
+                x-transition:leave-end="opacity-0 scale-75 -rotate-6">
 
-                <div class="flex items-center gap-3 p-4 pb-2">
-                    <div class="w-3 h-3 rounded-full bg-red-400 border border-red-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-yellow-400 border border-yellow-500"></div>
-                    <div class="w-3 h-3 rounded-full bg-green-400 border border-green-500"></div>
+                {{-- decoration siku siku --}}
+                <div class="absolute top-0 left-0 w-16 h-16 pointer-events-none">
+                    <div class="absolute top-2 left-2 w-8 h-1 bg-blue-300/40"></div>
+                    <div class="absolute top-2 left-2 w-1 h-8 bg-blue-300/40"></div>
+                </div>
+                <div class="absolute top-0 right-0 w-16 h-16 pointer-events-none">
+                    <div class="absolute top-2 right-2 w-8 h-1 bg-blue-300/40"></div>
+                    <div class="absolute top-2 right-2 w-1 h-8 bg-blue-300/40"></div>
+                </div>
+                <div class="absolute bottom-0 left-0 w-16 h-16 pointer-events-none">
+                    <div class="absolute bottom-2 left-2 w-8 h-1 bg-blue-300/40"></div>
+                    <div class="absolute bottom-2 left-2 w-1 h-8 bg-blue-300/40"></div>
+                </div>
+                <div class="absolute bottom-0 right-0 w-16 h-16 pointer-events-none">
+                    <div class="absolute bottom-2 right-2 w-8 h-1 bg-blue-300/40"></div>
+                    <div class="absolute bottom-2 right-2 w-1 h-8 bg-blue-300/40"></div>
                 </div>
 
-                <!-- content area -->
-                <div class="flex-1 flex items-center justify-center">
-                    <span class="text-5xl font-extrabold text-white drop-shadow-lg">
+                <div
+                    class="absolute inset-0 pointer-events-none
+                {{ $popupStatus == 'benar' ? 'bg-blue-400/10' : 'bg-red-400/10' }}">
+                </div>
+
+                <div class="relative flex flex-col items-center justify-center h-full p-8 text-center">
+                    <div class="mb-4">
+                        @if ($popupStatus == 'benar')
+                            <div
+                                class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center border border-blue-200 shadow-lg">
+                                <svg class="w-10 h-10 text-blue-200" fill="none" stroke="currentColor"
+                                    stroke-width="3" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                                </svg>
+                            </div>
+                        @else
+                            <div
+                                class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center border border-red-200 shadow-lg">
+                                <svg class="w-10 h-10 text-red-200" fill="none" stroke="currentColor"
+                                    stroke-width="3" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </div>
+                        @endif
+                    </div>
+                    <h3 class="text-4xl font-extrabold text-white drop-shadow-lg tracking-wider uppercase">
                         {{ strtoupper($popupStatus) }}
-                    </span>
+                    </h3>
+                    <p class="text-lg font-medium text-white/80 mt-2">
+                        {{ $popupStatus == 'benar' ? 'Jawaban kamu benar!' : 'Jawaban kamu salah!' }}
+                    </p>
+                    <!-- progress bar nih -->
+                    <div
+                        class="absolute bottom-6 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/20 rounded-full overflow-hidden">
+                        <div class="h-full {{ $popupStatus == 'benar' ? 'bg-blue-200' : 'bg-red-200' }} rounded-full animate-pulse"
+                            style="animation: progress 1.2s linear;"></div>
+                    </div>
                 </div>
             </div>
         </div>
+        <style>
+            @keyframes progress {
+                from {
+                    width: 0%;
+                }
+
+                to {
+                    width: 100%;
+                }
+            }
+        </style>
     @endif
     <!-- decorations -->
     <div class="fixed inset-0 pointer-events-none z-30">

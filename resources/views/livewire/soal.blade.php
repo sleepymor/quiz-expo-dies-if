@@ -91,14 +91,14 @@
                             <h1 class="text-xl sm:text-2xl md:text-3xl text-white font-bold">Score</h1>
                             <div
                                 class="flex justify-center items-center border px-4 sm:px-8 md:px-22 py-[71px] mt-5 backdrop-blur rounded-xl">
-                                <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold">1000</h1>
+                                <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold">{{ $playerScore }}</h1>
                             </div>
                         </div>
                         <div class="p-2 sm:p-4">
                             <h1 class="text-xl sm:text-2xl md:text-3xl text-white font-bold">Peringkat</h1>
                             <div
                                 class="flex justify-center items-center border px-4 sm:px-8 md:px-8 py-11 mt-5 backdrop-blur rounded-xl">
-                                <h1 class="text-7xl sm:text-8xl md:text-9xl font-bold">00</h1>
+                                <h1 class="text-7xl sm:text-8xl md:text-9xl font-bold">{{ $playerRank ?? '--' }}</h1>
                             </div>
                         </div>
                     </div>

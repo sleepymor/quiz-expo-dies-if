@@ -19,6 +19,7 @@ class Soal extends Component
     public $selectedAnswer = null;
     public $showPopup = false;
     public $popupStatus = null;
+    public $playerRank = null;
 
     public function mount()
     {
@@ -68,15 +69,43 @@ class Soal extends Component
             $session->save();
             $this->selectedAnswer = null;
         }
+        // jika udah soal terakhir, hitung rank
+        if ($this->currentQuestion >= count($this->question)) {
+            $this->calculateRank();
+        }
     }
+
+    public function calculateRank()
+    {
+        $session = QuizSession::latest()->first();
+        $allScores = QuizSession::orderBy('score', 'desc')->pluck('score')->toArray();
+        $playerScore = $session->score;
+
+        // rank = posisi pertama score yang sama dengan playerScore (1-based)
+        $rank = 1;
+        foreach ($allScores as $score) {
+            if ($score > $playerScore) {
+                $rank++;
+            } else {
+                break;
+            }
+        }
+        $this->playerRank = $rank;
+    }
+
     public function render()
     {
+        // mastiin rank udah dihitung apa blm
+        if ($this->currentQuestion >= count($this->question) && $this->playerRank === null) {
+            $this->calculateRank();
+        }
         // dd($this->questions);
         return view('livewire.soal', [
             "Question" => $this->question,
             "currentQuestion" => $this->currentQuestion,
             "playerScore" => $this->playerScore,
             "selectedAnswer" => $this->selectedAnswer,
+            "playerRank" => $this->playerRank, //send to view
         ]);
     }
 
@@ -105,13 +134,14 @@ class Soal extends Component
             ]);
         }
 
-        // Reset state
+        // reset state
         $this->question = [];
         $this->currentQuestion = 0;
         $this->playerScore = 0;
         $this->selectedAnswer = null;
         $this->showPopup = false;
         $this->popupStatus = null;
+        $this->playerRank = null;
 
         // ambil ulang soal untuk session baru
         $fetchQuestions = UsedQuestion::where("session_id", $session->id)->get();

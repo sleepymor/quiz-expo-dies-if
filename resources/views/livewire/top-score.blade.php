@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <div class="top-three flex justify-center items-end mb-8 sm:mb-10 lg:mb-8 gap-4" style="z-index: 10">
+        {{-- <div class="top-three flex justify-center items-end mb-8 sm:mb-10 lg:mb-8 gap-4" style="z-index: 10">
 
             <img src="{{ asset('images/2025/Figur Cewek.png') }}" alt="figur cewek" class="h-auto max-h-[400px]"
                 style="transform: translateY(-100px)">
@@ -57,8 +57,44 @@
 
             <img src="{{ asset('images/2025/Figur Cowok.png') }}" alt="figur cowok" class="h-auto max-h-[400px]"
                 style="transform: translateY(-100px)">
-        </div>
+        </div> --}}
 
 
     </div>
+
+    <div class="flex justify-center items-start gap-6 mt-12" style="z-index: 10">
+        <!-- Figur Kiri -->
+        <img src="{{ asset('images/2025/Figur Cewek.png') }}" 
+            alt="figur cewek" 
+            class="h-auto max-h-[350px]">
+
+        <!-- Leaderboard Box -->
+        <div class="bg-[#0325802B] border-4 border-white rounded-2xl p-6 w-[350px] sm:w-[400px]" style="z-index: 10">
+            <h3 class="text-center text-white text-2xl font-bold mb-4">LEADERBOARD</h3>
+            
+            <div class="flex flex-col gap-3">
+                @foreach($highscores as $index => $score)
+                    <div class="flex justify-between items-center bg-[#032580] text-white rounded-lg px-4 py-2">
+                        <div class="flex items-center gap-3">
+                            <span class="font-bold w-6 text-center">
+                                {{ $index+1 }}
+                            </span>
+                            <span class="font-semibold">
+                                {{ $score->player->username ?? 'No Data' }}
+                            </span>
+                        </div>
+                        <span class="font-bold">
+                            {{ $score->score ?? 0 }}
+                        </span>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+
+        <!-- Figur Kanan -->
+        <img src="{{ asset('images/2025/Figur Cowok.png') }}" 
+            alt="figur cowok" 
+            class="h-auto max-h-[350px]" style="z-index: 10">
+    </div>
+    
 </section>

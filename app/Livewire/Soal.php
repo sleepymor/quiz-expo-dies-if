@@ -44,6 +44,10 @@ class Soal extends Component
 
     public function checkAnswered($points)
     {
+        // lanjut cuman kalo semisal udah memilih jawaban
+        if ($this->selectedAnswer === null) {
+            return;
+        }
         $current = $this->question[$this->currentQuestion][0];
         $selected = $this->selectedAnswer;
 

@@ -79,10 +79,10 @@
 
                 <img src="{{ asset('images/2025/figur cowok.png') }}" alt="Cowok"
                     class="absolute top-1/4 left-0 sm:left-1/4 md:left-1/4 lg:left-1/4 xl:top-[133px] xl:left-[135px]"
-                    style="width: 18%; max-width: 250px; transform: translate(-50%, -50%);">
+                    style="width: 20%; max-width: 250px; transform: translate(-50%, -50%);">
                 <img src="{{ asset('images/2025/figur cewek.png') }}" alt="Cewek"
                     class="absolute top-1/4 right-0 sm:right-1/4 md:right-1/4 lg:right-1/4 xl:top-[133px] xl:right-[135px]"
-                    style="width: 18%; max-width: 250px; transform: translate(50%, -50%);">
+                    style="width: 20%; max-width: 250px; transform: translate(50%, -50%);">
 
                 <div class="flex justify-center items-center mt-10 scoring-container">
                     <div

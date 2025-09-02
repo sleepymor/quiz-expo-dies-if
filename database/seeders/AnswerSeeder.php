@@ -344,6 +344,335 @@ class AnswerSeeder extends Seeder
                 "status" => true
             ],
 
+            [
+                "question_id" => 16,
+                "answer" => "10 November 2012",
+                "status" => false
+            ],
+            [
+                "question_id" => 16,
+                "answer" => "6 Oktober 2014",
+                "status" => true
+            ],
+            [
+                "question_id" => 16,
+                "answer" => "12 Oktober 2014",
+                "status" => false
+            ],
+            [
+                "question_id" => 16,
+                "answer" => "1 Januari 2013",
+                "status" => false
+            ],
+
+            // 17
+            [
+                "question_id" => 17,
+                "answer" => "2010",
+                "status" => false
+            ],
+            [
+                "question_id" => 17,
+                "answer" => "2011",
+                "status" => false
+            ],
+            [
+                "question_id" => 17,
+                "answer" => "2012",
+                "status" => true
+            ],
+            [
+                "question_id" => 17,
+                "answer" => "2014",
+                "status" => false
+            ],
+
+            // 18
+            [
+                "question_id" => 18,
+                "answer" => "Gedung Rektorat ITK",
+                "status" => false
+            ],
+            [
+                "question_id" => 18,
+                "answer" => "Gedung SCC",
+                "status" => true
+            ],
+            [
+                "question_id" => 18,
+                "answer" => "Balikpapan Superblock",
+                "status" => false
+            ],
+            [
+                "question_id" => 18,
+                "answer" => "Gedung Serbaguna Samarinda",
+                "status" => false
+            ],
+
+            // 19
+            [
+                "question_id" => 19,
+                "answer" => "Joko Widodo",
+                "status" => false
+            ],
+            [
+                "question_id" => 19,
+                "answer" => "Megawati Soekarnoputri",
+                "status" => false
+            ],
+            [
+                "question_id" => 19,
+                "answer" => "Susilo Bambang Yudhoyono",
+                "status" => true
+            ],
+            [
+                "question_id" => 19,
+                "answer" => "BJ Habibie",
+                "status" => false
+            ],
+
+            // 20
+            [
+                "question_id" => 20,
+                "answer" => "Menjadi universitas terbaik di Asia Tenggara pada tahun 2030",
+                "status" => false
+            ],
+            [
+                "question_id" => 20,
+                "answer" => "Menjadi perguruan tinggi unggul di bidang teknologi informasi pada tahun 2020",
+                "status" => false
+            ],
+            [
+                "question_id" => 20,
+                "answer" => "Menjadi perguruan tinggi yang unggul dan berperan aktif dalam pembangunan nasional melalui pemberdayaan potensi daerah Kalimantan pada tahun 2025",
+                "status" => true
+            ],
+            [
+                "question_id" => 20,
+                "answer" => "Menjadi politeknik terdepan di Kalimantan pada tahun 2035",
+                "status" => false
+            ],
+
+            // 21
+            [
+                "question_id" => 21,
+                "answer" => "Menyelenggarakan pendidikan dan penelitian tanpa memperhatikan potensi daerah",
+                "status" => false
+            ],
+            [
+                "question_id" => 21,
+                "answer" => "Menghasilkan lulusan unggul, berkualitas, berbudi luhur, serta berperan aktif dalam pembangunan nasional",
+                "status" => true
+            ],
+            [
+                "question_id" => 21,
+                "answer" => "Menghasilkan lulusan yang hanya fokus pada industri internasional",
+                "status" => false
+            ],
+            [
+                "question_id" => 21,
+                "answer" => "Menjadi universitas yang bebas dari tridharma perguruan tinggi",
+                "status" => false
+            ],
+
+            // 22
+            [
+                "question_id" => 22,
+                "answer" => "3",
+                "status" => false
+            ],
+            [
+                "question_id" => 22,
+                "answer" => "4",
+                "status" => false
+            ],
+            [
+                "question_id" => 22,
+                "answer" => "5",
+                "status" => true
+            ],
+            [
+                "question_id" => 22,
+                "answer" => "6",
+                "status" => false
+            ],
+
+            // 23
+            [
+                "question_id" => 23,
+                "answer" => "Teknik Industri",
+                "status" => false
+            ],
+            [
+                "question_id" => 23,
+                "answer" => "Teknik Informatika",
+                "status" => false
+            ],
+            [
+                "question_id" => 23,
+                "answer" => "Teknik Sipil",
+                "status" => true
+            ],
+            [
+                "question_id" => 23,
+                "answer" => "Arsitektur",
+                "status" => false
+            ],
+
+            // 24
+            [
+                "question_id" => 24,
+                "answer" => "Teknik Mesin",
+                "status" => false
+            ],
+            [
+                "question_id" => 24,
+                "answer" => "Teknik Elektro",
+                "status" => false
+            ],
+            [
+                "question_id" => 24,
+                "answer" => "Teknik Kimia",
+                "status" => false
+            ],
+            [
+                "question_id" => 24,
+                "answer" => "Teknik Industri",
+                "status" => true
+            ],
+
+            // 25
+            [
+                "question_id" => 25,
+                "answer" => "6 Oktober 2014",
+                "status" => false
+            ],
+            [
+                "question_id" => 25,
+                "answer" => "10 Oktober 2014",
+                "status" => false
+            ],
+            [
+                "question_id" => 25,
+                "answer" => "12 Oktober 2014",
+                "status" => true
+            ],
+            [
+                "question_id" => 25,
+                "answer" => "1 Desember 2014",
+                "status" => false
+            ],
+
+            // 26
+            [
+                "question_id" => 26,
+                "answer" => "2020",
+                "status" => false
+            ],
+            [
+                "question_id" => 26,
+                "answer" => "2025",
+                "status" => true
+            ],
+            [
+                "question_id" => 26,
+                "answer" => "2030",
+                "status" => false
+            ],
+            [
+                "question_id" => 26,
+                "answer" => "2035",
+                "status" => false
+            ],
+
+            // 27
+            [
+                "question_id" => 27,
+                "answer" => "Pemerintah asing",
+                "status" => false
+            ],
+            [
+                "question_id" => 27,
+                "answer" => "Perusahaan teknologi luar negeri",
+                "status" => false
+            ],
+            [
+                "question_id" => 27,
+                "answer" => "Pemangku kepentingan untuk memberdayakan potensi daerah Kalimantan",
+                "status" => true
+            ],
+            [
+                "question_id" => 27,
+                "answer" => "Universitas swasta di luar negeri",
+                "status" => false
+            ],
+
+            // 28
+            [
+                "question_id" => 28,
+                "answer" => "Institut Teknologi Kalimantan",
+                "status" => true
+            ],
+            [
+                "question_id" => 28,
+                "answer" => "Institut Teknologi Kartanegara",
+                "status" => false
+            ],
+            [
+                "question_id" => 28,
+                "answer" => "Institut Teknologi Kutai",
+                "status" => false
+            ],
+            [
+                "question_id" => 28,
+                "answer" => "Institut Teknologi Kaltim",
+                "status" => false
+            ],
+
+            // 29
+            [
+                "question_id" => 29,
+                "answer" => "Pemberdayaan potensi daerah Kalimantan",
+                "status" => true
+            ],
+            [
+                "question_id" => 29,
+                "answer" => "Kerja sama internasional semata",
+                "status" => false
+            ],
+            [
+                "question_id" => 29,
+                "answer" => "Program studi berbasis luar negeri",
+                "status" => false
+            ],
+            [
+                "question_id" => 29,
+                "answer" => "Mengurangi jumlah prodi yang tersedia",
+                "status" => false
+            ],
+
+            // 30
+            [
+                "question_id" => 30,
+                "answer" => "Teknik Informatika",
+                "status" => false
+            ],
+            [
+                "question_id" => 30,
+                "answer" => "Teknik Perkapalan",
+                "status" => true
+            ],
+            [
+                "question_id" => 30,
+                "answer" => "Arsitektur",
+                "status" => false
+            ],
+            [
+                "question_id" => 30,
+                "answer" => "Manajemen",
+                "status" => false
+            ],
+
         ];
 
         foreach ($items as $item) {

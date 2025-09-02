@@ -36,18 +36,18 @@
     <div class="fixed inset-0 pointer-events-none z-30">
         <!-- top left decoration -->
         <img src="{{ asset('images/2025/decorations/2-top-left.svg') }}" alt="Top Left Decoration"
-            class="absolute -top-52 -left-52 w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-70 scale-110">
+            class="absolute -top-[370px] -left-[370px] w-96 h-96 md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] opacity-70 scale-110">
 
         <!-- bottom right decoration -->
         <img src="{{ asset('images/2025/decorations/2-bottom-right.svg') }}" alt="Bottom Right Decoration"
-            class="absolute -bottom-60 -right-60 w-[500px] h-[500px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] opacity-50 scale-125">
+            class="absolute -bottom-[420px] -right-[420px] w-[500px] h-[500px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] opacity-50 scale-125">
     </div>
     @php
         $questionCollection = $question[$currentQuestion] ?? 'result';
     @endphp
     @if ($questionCollection != 'result')
         @foreach ($questionCollection as $question)
-            <div class="soal flex justify-center items-center">
+            <div class="soal flex justify-center items-center mx-4">
                 <p class="text-2xl text-center">{{ $question->question }}</p>
             </div>
             <div class="pilihan-ganda flex flex-col gap-4 mt-6">

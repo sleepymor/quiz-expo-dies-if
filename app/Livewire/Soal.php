@@ -127,7 +127,7 @@ class Soal extends Component
         // generate ulang soal
         UsedQuestion::where('session_id', $session->id)->delete();
 
-        $questions = Question::where('level', 1)->inRandomOrder()->limit(3)->get()
+        $questions = Question::where('level', 1)->inRandomOrder()->limit(10)->get()
             ->merge(Question::where('level', 2)->inRandomOrder()->limit(3)->get())
             ->merge(Question::where('level', 3)->inRandomOrder()->limit(3)->get());
 

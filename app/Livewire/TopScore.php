@@ -13,8 +13,10 @@ class TopScore extends Component
     public function mount()
     {
         $this->highscores = QuizSession::with('player')
+        ->whereHas('player')
+                    ->where('score', '>', 0) 
                     ->orderby('score', 'desc')
-                    ->take(3)
+                    ->take(10)
                     ->get();
     }
     public function render()

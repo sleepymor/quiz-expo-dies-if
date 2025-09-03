@@ -15,8 +15,8 @@
                     style="background-color: #9EFF00; color: #160093; border-radius: 16px 16px 0 0;">
                     2
                 </div>
-                <p class="text-white text-sm sm:text-base md:text-lg mt-2 font-semibold text-center break-words w-full">
-                    {{ $highscores[1]->player->username ?? 'No Data' }}
+                <p class="text-white text-sm sm:text-base md:text-lg mt-2 font-semibold text-center break-words w-full uppercase">
+                    {{ $highscores->get(1)?->player?->username ?? 'No Data' }}
                 </p>
             </div>
 
@@ -26,8 +26,8 @@
                     style="background-color: #009DFF; color: white; border-radius: 16px 16px 0 0;">
                     1
                 </div>
-                <p class="text-white text-sm sm:text-base md:text-lg mt-2 font-semibold text-center break-words w-full">
-                    {{ $highscores[0]->player->username ?? 'No Data' }}
+                <p class="text-white text-sm sm:text-base md:text-lg mt-2 font-semibold text-center break-words w-full uppercase">
+                    {{ $highscores->get(0)?->player?->username ?? 'No Data' }}
                 </p>
             </div>
 
@@ -37,8 +37,8 @@
                     style="background-color: #160093; color:#9EFF00; border-radius: 16px 16px 0 0;">
                     3
                 </div>
-                <p class="text-white text-sm sm:text-base md:text-lg mt-2 font-semibold text-center break-words w-full">
-                    {{ $highscores[2]->player->username ?? 'No Data' }}
+                <p class="text-white text-sm sm:text-base md:text-lg mt-2 font-semibold text-center break-words w-full uppercase">
+                    {{ $highscores->get(2)?->player?->username ?? 'No Data' }}
                 </p>
             </div>
         </div>
@@ -62,32 +62,36 @@
 
     </div>
 
-    <div class="flex justify-center items-start gap-6 mt-12" style="z-index: 10">
+    <div class="flex justify-center items-start gap-6 mt-12" style="z-index: 30">
         <!-- Figur Kiri -->
         <img src="{{ asset('images/2025/Figur Cewek.png') }}" 
             alt="figur cewek" 
             class="h-auto max-h-[350px]">
 
         <!-- Leaderboard Box -->
-        <div class="bg-[#0325802B] border-4 border-white rounded-2xl p-6 w-[350px] sm:w-[400px]" style="z-index: 10">
+        <div class="bg-[#0325802B] border-4 border-white rounded-2xl p-6 w-[350px] sm:w-[400px] max-h-[400px] overflow-y-auto" style="z-index: 10">
             <h3 class="text-center text-white text-2xl font-bold mb-4">LEADERBOARD</h3>
             
             <div class="flex flex-col gap-3">
-                @foreach($highscores as $index => $score)
+                @forelse($highscores as $index => $score)
                     <div class="flex justify-between items-center bg-[#032580] text-white rounded-lg px-4 py-2">
                         <div class="flex items-center gap-3">
                             <span class="font-bold w-6 text-center">
-                                {{ $index+1 }}
+                                {{ $index + 1 }}
                             </span>
-                            <span class="font-semibold">
-                                {{ $score->player->username ?? 'No Data' }}
+                            <span class="font-semibold uppercase">
+                                {{ $score->player?->username ?? 'Unknown' }}
                             </span>
                         </div>
                         <span class="font-bold">
                             {{ $score->score ?? 0 }}
                         </span>
                     </div>
-                @endforeach
+                @empty
+                    <div class="text-center text-white">
+                        <p>No scores available yet</p>
+                    </div>
+                @endforelse
             </div>
         </div>
 

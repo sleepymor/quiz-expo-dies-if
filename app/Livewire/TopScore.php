@@ -16,6 +16,7 @@ class TopScore extends Component
         ->whereHas('player')
                     ->where('score', '>', 0) 
                     ->orderby('score', 'desc')
+                    ->orderBy('id', 'desc') 
                     ->take(10)
                     ->get();
     }

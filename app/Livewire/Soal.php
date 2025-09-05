@@ -69,8 +69,12 @@ class Soal extends Component
             // pake hasil $isCorrect di atas
             $this->playerScore = $this->playerScore + ($isCorrect ? $points : 0);
 
+            $this->playerScore = $this->playerScore + ($isCorrect ? $points : 0);
             $session->score = $session->score + ($isCorrect ? $points : 0);
             $session->save();
+
+            $this->dispatch('scoresChanged');
+
             $this->selectedAnswer = null;
         }
         // jika udah soal terakhir, hitung rank

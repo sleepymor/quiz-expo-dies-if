@@ -16,6 +16,6 @@ use App\Http\Controllers\PlayerController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('/');
 
 // Route::get('/', [PlayerController::class, 'index'],);

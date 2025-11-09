@@ -38,7 +38,7 @@ class Registration extends Component
     
 
 
-        $questions = Question::where('level', 1)->inRandomOrder()->limit(3)->get();
+        $questions = Question::where('level', 1)->inRandomOrder()->limit(10)->get();
         $questions = $questions->merge(Question::where('level', 2)->inRandomOrder()->limit(3)->get());
         $questions = $questions->merge(Question::where('level', 3)->inRandomOrder()->limit(3)->get());
 
@@ -56,5 +56,9 @@ class Registration extends Component
     public function render()
     {
         return view('livewire.registration');
+    }
+
+    public function goBack() {
+        return redirect()->route('/');
     }
 }
